@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "974ca059-1e4b-4a2d-8fbb-d81308825b79",
+		"name": "demo-todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add new todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"todo2\",\n\t\"description\":\"todo2 description\",\n\t\"time\":\"2019-06-18\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/demo/todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"todo"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				},
+				"description": "create todo"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Todo item",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"title\": \"todo1\",\n    \"description\": \"todo1 description updated\",\n    \"time\": \"2019-06-18\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/demo/todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"todo"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				},
+				"description": "create todo"
+			},
+			"response": []
+		},
+		{
+			"name": "read todo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"title\": \"todo1\",\n    \"description\": \"todo1 description updated\",\n    \"time\": \"2019-06-18\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/demo/todo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"todo",
+						"1"
+					]
+				},
+				"description": "create todo"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Todo item",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"title\": \"todo1\",\n    \"description\": \"todo1 description updated\",\n    \"time\": \"2019-06-18\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/demo/todo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"todo",
+						"1"
+					]
+				},
+				"description": "create todo"
+			},
+			"response": []
+		},
+		{
+			"name": "Show list of all Todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"title\": \"todo1\",\n    \"description\": \"todo1 description updated\",\n    \"time\": \"2019-06-18\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/demo/readAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"readAll"
+					]
+				},
+				"description": "create todo"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete multiple Todo item",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": 3,\n        \"title\": \"todo2\",\n        \"description\": \"todo2 description\",\n        \"time\": \"2019-06-18T00:00:00.000+0000\"\n    },\n    {\n        \"id\": 4,\n        \"title\": \"todo2\",\n        \"description\": \"todo2 description\",\n        \"time\": \"2019-06-18T00:00:00.000+0000\"\n    }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/demo/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demo",
+						"deleteAll"
+					]
+				},
+				"description": "create todo"
+			},
+			"response": []
+		}
+	]
+}
